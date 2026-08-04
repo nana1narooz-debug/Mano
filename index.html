@@ -54,6 +54,11 @@ background:#ff4d6d;
 color:white;
 font-size:18px;
 cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
 }
 
 #error{
@@ -63,12 +68,13 @@ color:#ff5b5b;
 
 .message{
 max-width:700px;
-font-size:22px;
-line-height:2;
+font-size:20px;
+line-height:1.5;
+padding:10px;
 }
 
 .next{
-margin-top:40px;
+margin-top:20px;
 }
 
 .photo{
@@ -82,8 +88,9 @@ animation:zoom 1s;
 
 .photo img{
 width:280px;
+max-width:90%;
 border-radius:20px;
-box-shadow:0 0 30px rgba(255,255,255,.25);
+box-shadow:0 0 25px rgba(255,255,255,.25);
 }
 
 .emoji{
@@ -110,9 +117,8 @@ transform:scale(1);
 .heart{
 position:fixed;
 bottom:-30px;
-font-size:24px;
-animation:fly 6s linear infinite;
 pointer-events:none;
+animation:fly 6s linear infinite;
 }
 
 @keyframes fly{
@@ -154,7 +160,6 @@ opacity:0;
 <button class="next" onclick="startPhotos()">
 🎁 Open the Surprise
 </button>
-<h1>❤️ Mano ❤️</h1>
 
 </div>
 
@@ -191,10 +196,13 @@ const lines=[
 "يمكن بنتخانق كتير، بس ده من حبي ليك... وبغير عليك أكتر ما تتخيل. 🤍",
 "بصراحة كنت مستنية إنك إنت اللي تعملي الفيديو ده، بس إحنا واحد، ومش بحب أشوفك زعلان.",
 "مهما حصل بينا، مقدرش على زعلك، ولا أحب أشوفك زعلان.",
-"...حاولت احط اغنيه وفشلت يس كنت هحط ل انير عيد كل الكلام اللي حوايا ..اعتبر الفيديو ده مصالحه عن أي حاجة مزعلاك... مع إن انا اللي زعلانه. 😂♥️",
+"اعتبر الفيديو ده مصالحه عن أي حاجة مزعلاك... مع إن انا اللي زعلانه. 😂♥️",
 "يلا بقى هسيبك مع الفيديو...",
+"حاولت أحط أغنية بس فشلت🙂 بس كنت نفسي أحط (كل الكلام اللي جوايا).",
 "I love you, Mano 💋♥️"
 ];
+
+let i=0;
 
 function check(){
 
@@ -214,8 +222,6 @@ document.getElementById("error").innerHTML="❌ Password غلط";
 
 }
 
-let i=0;
-
 function showText(){
 
 if(i<lines.length){
@@ -224,12 +230,7 @@ document.getElementById("msg").innerHTML+=lines[i]+"<br><br>";
 
 i++;
 
-setTimeout(showText,2200);
-
-}
-
-}
-
+setTimeout(showText,1500);
 function startPhotos(){
 
 document.getElementById("textPage").style.display="none";
@@ -242,9 +243,7 @@ let index=0;
 function next(){
 
 if(index>0){
-
 photos[index-1].style.display="none";
-
 }
 
 if(index<photos.length){
@@ -254,6 +253,13 @@ photos[index].style.display="flex";
 index++;
 
 setTimeout(next,3000);
+
+}else{
+
+let end=document.createElement("h2");
+end.innerHTML="🤍 Thank You For Watching 🤍<br><br>I Love You, Mano ❤️";
+end.style.animation="fade 2s";
+document.getElementById("photoPage").appendChild(end);
 
 }
 
@@ -271,7 +277,9 @@ let h=document.createElement("div");
 
 h.className="heart";
 
-h.innerHTML=["❤️","🤍","💕","💖","💋"][Math.floor(Math.random()*5)];
+let emojis=["❤️","🤍","💕","💖","💋","🩵"];
+
+h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
 h.style.left=Math.random()*100+"%";
 
@@ -293,3 +301,6 @@ h.remove();
 
 </body>
 </html>
+}
+
+}
