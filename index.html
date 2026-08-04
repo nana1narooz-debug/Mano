@@ -1,49 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Mano</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Mano ❤️</title>
 
 <style>
-body{
-  text-align:center;
-  background:#000;
-  color:white;
-  font-family:Arial;
-}
-img{
-  width:250px;
-  border-radius:20px;
-  margin:15px;
-}
-.emoji{
-  font-size:40px;
-}
-</style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+text-align:center;
+}
+
+#login{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+#login h2{
+margin-bottom:20px;
+font-size:35px;
+}
+
+input{
+width:260px;
+padding:15px;
+border:none;
+border-radius:15px;
+font-size:18px;
+text-align:center;
+}
+
+button{
+margin-top:20px;
+padding:12px 35px;
+border:none;
+border-radius:15px;
+background:#ff4d6d;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+}
+
+#error{
+margin-top:15px;
+color:red;
+}
+
+#content{
+display:none;
+animation:fade 1.5s;
+padding:20px;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.message{
+font-size:22px;
+line-height:2;
+margin:30px auto;
+max-width:800px;
+animation:fade 2s;
+}
+
+.gallery{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.photo{
+display:none;
+animation:fade 1.5s;
+margin-bottom:30px;
+}
+
+.photo img{
+width:280px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+.emoji{
+font-size:38px;
+margin-top:10px;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:float 6s linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>❤️ Mano ❤️</h1>
+<div id="login">
 
-<audio controls autoplay>
-  <source src="اغنيه ليلي-موقع مطبعه.mp3" type="audio/mpeg">
-</audio>
+<h2>🔒 Enter Password</h2>
+
+<input id="pass" type="password" placeholder="Password">
 
 <br>
 
+<button onclick="check()">Open ❤️</button>
+
+<p id="error"></p>
+
+</div>
+
+<div id="content">
+
+<div class="message" id="msg"></div>
+
+<div class="gallery">
+
+<div class="photo">
 <img src="IMG-20251024-WA0471_1779221268291.jpg">
 <div class="emoji">💋</div>
+</div>
 
+<div class="photo">
 <img src="IMG_2026060804_234614.jpg">
 <div class="emoji">💙</div>
+</div>
 
+<div class="photo">
 <img src="PXL_20260122_120828280.NIGHT.jpg">
 <div class="emoji">💚</div>
+</div>
 
+<div class="photo">
 <img src="PXL_20260731_214205224.jpg">
 <div class="emoji">🖤</div>
+</div>
+
+</div>
+
+</div><script>
+
+const text = [
+"يمكن بنتخانق كتير، بس ده من حبي ليك... وبغير عليك أكتر ما تتخيل. 🤍",
+"بصراحة كنت مستنية إنك إنت اللي تعملي الفيديو ده، بس إحنا واحد، ومش بحب أشوفك زعلان.",
+"مهما حصل بينا، مقدرش على زعلك، ولا أحب أشوفك زعلان.",
+"اعتبر الفيديو ده مصالحه عن أي حاجة مزعلاك... مع إن انا اللي زعلانه. 😂♥️",
+"يلا بقى هسيبك مع الفيديو...",
+"I love you, Mano 💋♥️"
+];
+
+let i = 0;
+
+function showMessage(){
+
+if(i < text.length){
+
+document.getElementById("msg").innerHTML += text[i] + "<br><br>";
+
+i++;
+
+setTimeout(showMessage,2500);
+
+}else{
+
+showPhotos();
+
+}
+
+}
+
+function showPhotos(){
+
+let photos = document.querySelectorAll(".photo");
+
+let index = 0;
+
+let timer = setInterval(()=>{
+
+photos[index].style.display="block";
+
+index++;
+
+if(index==photos.length){
+
+clearInterval(timer);
+
+}
+
+},1800);
+
+}
+
+function check(){
+
+if(document.getElementById("pass").value=="Mano"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("content").style.display="block";
+
+showMessage();
+
+hearts();
+
+}else{
+
+document.getElementById("error").innerHTML="❌ Password غلط";
+
+}
+
+}
+
+function hearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💋","🤍","💕","💖"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+},350);
+
+}
+
+</script>
 
 </body>
 </html>
