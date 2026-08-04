@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mano ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+text-align:center;
+}
+.box{
+background:#222;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+}
+input{
+width:90%;
+padding:12px;
+border-radius:10px;
+border:none;
+margin:15px 0;
+font-size:18px;
+text-align:center;
+}
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+}
+#content{
+display:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box" id="login">
+<h2>💋 Enter Password</h2>
+
+<input id="pass" placeholder="Password">
+
+<br>
+
+<button onclick="check()">Open ❤️</button>
+
+<p id="wrong" style="color:red;"></p>
+
+</div>
+
+<div class="box" id="content">
+
+<h2>❤️ For Mano ❤️</h2>
+
+<p>
+
+يمكن بنتخانق كتير، بس ده من حبي ليك... وبغير عليك أكتر ما تتخيل.<br><br>
+
+بصراحة كنت مستنية إنك إنت اللي تعملي الفيديو ده، بس إحنا واحد، ومش بحب أشوفك زعلان.<br><br>
+
+مهما حصل بينا، مقدرش على زعلك، ولا أحب أشوفك زعلان.<br><br>
+
+اعتبر الفيديو ده مصالحه عن أي حاجة مزعلاك... مع إن انا اللي زعلانه. 😂♥️<br><br>
+
+يلا بقى هسيبك مع الفيديو...<br><br>
+
+<b>I love you, Mano 💋♥️</b>
+
+</p>
+
+<h3>🎥 الفيديو هيكون هنا بعدين</h3>
+
+</div>
+
+<script>
+
+function check(){
+
+if(document.getElementById("pass").value=="Mano"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("content").style.display="block";
+
+}else{
+
+document.getElementById("wrong").innerHTML="❌ Password غلط";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
