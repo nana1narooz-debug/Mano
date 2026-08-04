@@ -1,110 +1,58 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Mano ❤️</title>
+<title>Mano ❤️</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#111;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:white;
-text-align:center;
+body {
+  text-align: center;
+  background: #fff0f5;
+  font-family: Arial;
 }
-.box{
-background:#222;
-padding:30px;
-border-radius:20px;
-width:90%;
-max-width:400px;
+
+h1 {
+  color: #ff4d6d;
 }
-input{
-width:90%;
-padding:12px;
-border-radius:10px;
-border:none;
-margin:15px 0;
-font-size:18px;
-text-align:center;
+
+img {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 15px;
+  margin-top: 25px;
 }
-button{
-padding:12px 25px;
-border:none;
-border-radius:10px;
-background:#ff4d6d;
-color:white;
-font-size:18px;
-}
-#content{
-display:none;
+
+p {
+  font-size: 35px;
+  margin-top: 5px;
 }
 </style>
 
 </head>
+
 <body>
 
-<div class="box" id="login">
-<h2>💋 Enter Password</h2>
+<h1>❤️ ذكرياتنا ❤️</h1>
 
-<input id="pass" placeholder="Password">
+<audio controls loop>
+  <source src="اغنيه ليلي-موقع مطبعه.mp3" type="audio/mpeg">
+</audio>
 
-<br>
 
-<button onclick="check()">Open ❤️</button>
+<img src="IMG-20251024-WA0471_1779221268291.jpg">
+<p>💋</p>
 
-<p id="wrong" style="color:red;"></p>
 
-</div>
+<img src="IMG_2026060804_234614.jpg">
+<p>💙</p>
 
-<div class="box" id="content">
 
-<h2>❤️ For Mano ❤️</h2>
+<img src="PXL_20260122_120828280.NIGHT.jpg">
+<p>💚</p>
 
-<p>
 
-يمكن بنتخانق كتير، بس ده من حبي ليك... وبغير عليك أكتر ما تتخيل.<br><br>
+<img src="PXL_20260731_214205224.jpg">
+<p>🖤</p>
 
-بصراحة كنت مستنية إنك إنت اللي تعملي الفيديو ده، بس إحنا واحد، ومش بحب أشوفك زعلان.<br><br>
-
-مهما حصل بينا، مقدرش على زعلك، ولا أحب أشوفك زعلان.<br><br>
-
-اعتبر الفيديو ده مصالحه عن أي حاجة مزعلاك... مع إن انا اللي زعلانه. 😂♥️<br><br>
-
-يلا بقى هسيبك مع الفيديو...<br><br>
-
-<b>I love you, Mano 💋♥️</b>
-
-</p>
-
-<h3>🎥 الفيديو هيكون هنا بعدين</h3>
-
-</div>
-
-<script>
-
-function check(){
-
-if(document.getElementById("pass").value=="Mano"){
-
-document.getElementById("login").style.display="none";
-
-document.getElementById("content").style.display="block";
-
-}else{
-
-document.getElementById("wrong").innerHTML="❌ Password غلط";
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
