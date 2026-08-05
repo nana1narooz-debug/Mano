@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>❤️ Mano ❤️</title>
 
 <style>
@@ -17,8 +19,8 @@ font-family:Arial,sans-serif;
 body{
 background:#000;
 color:#fff;
-overflow:hidden;
 text-align:center;
+overflow:hidden;
 }
 
 .page{
@@ -36,13 +38,18 @@ animation:fade 1s;
 display:flex;
 }
 
+h2{
+margin-bottom:20px;
+}
+
 input{
-width:250px;
+width:260px;
 padding:15px;
 border:none;
 border-radius:15px;
 font-size:18px;
 text-align:center;
+outline:none;
 }
 
 button{
@@ -62,26 +69,26 @@ transform:scale(1.05);
 }
 
 #error{
-margin-top:15px;
 color:#ff5b5b;
+margin-top:15px;
 }
 
 .message{
 max-width:700px;
 font-size:20px;
-line-height:1.5;
-padding:10px;
+line-height:1.7;
+padding:15px;
 }
 
 .next{
-margin-top:20px;
+margin-top:25px;
 }
 
 .photo{
 display:none;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 height:100vh;
 animation:zoom 1s;
 }
@@ -94,7 +101,7 @@ box-shadow:0 0 25px rgba(255,255,255,.25);
 }
 
 .emoji{
-font-size:40px;
+font-size:42px;
 margin-top:15px;
 }
 
@@ -155,7 +162,7 @@ opacity:0;
 
 <div class="page" id="textPage">
 
-<div class="message" id="msg"></div>
+<div id="msg" class="message"></div>
 
 <button class="next" onclick="startPhotos()">
 🎁 Open the Surprise
@@ -163,7 +170,8 @@ opacity:0;
 
 </div>
 
-<div class="page" id="photoPage"><div class="photo">
+<div class="page" id="photoPage">
+  <div class="photo">
 <img src="IMG-20260305-WA0002.jpg">
 <div class="emoji">💋</div>
 </div>
@@ -212,6 +220,7 @@ document.getElementById("login").style.display="none";
 document.getElementById("textPage").style.display="flex";
 
 showText();
+
 hearts();
 
 }else{
@@ -257,8 +266,8 @@ setTimeout(next,3000);
 }else{
 
 let end=document.createElement("h2");
-end.innerHTML="🤍 Thank You For Watching 🤍<br><br>I Love You, Mano ❤️";
-end.style.animation="fade 2s";
+end.innerHTML="🤍 I Love You, Mano ❤️";
+end.style.marginTop="30px";
 document.getElementById("photoPage").appendChild(end);
 
 }
@@ -288,9 +297,7 @@ h.style.fontSize=(20+Math.random()*20)+"px";
 document.body.appendChild(h);
 
 setTimeout(()=>{
-
 h.remove();
-
 },6000);
 
 },350);
